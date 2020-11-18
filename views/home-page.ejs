@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home-page</title>
+</head>
+<body>
+    <% result.forEach(element => { %>
+        <h3>Type: <%= element.type%></h3> <!--we add = when we are talking about variables-->
+        <p>Text: <%= element.text%></p>
+        <br>
+        <form action="/facts" method="POST">
+            <input type="hidden" name="type" value="<%=element.type%>">
+            <input type="hidden" name="text" value="<%=element.text%>">
+            <!--input fields are hidden because I want the user just to add to DB without editing , button is visibl to user-->
+            <button type="submit">Add to Fav</button>
+        </form>
+    <%})%>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Facts</h1>
+    </header>
+    <hr>
+    <% result.forEach(elements=>{ %>
+        <section>
+            <h2>Type:<%= elements.type %></h2>
+            <p>Text:<%= elements.text %></p>
+        </section>
+        <form action="/favorites" method="POST">
+            <input type="hidden" value="<%= elements.type %>">
+            <input type="hidden" value="<%= elements.text %>">
+            <button type="submit">Add Fact</button>
+        </form>
+    <% }); %>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../pucblic/base.css">
+</head>
+<body>
+    <header>
+        <h1>FACTS LIST</h1>
+    </header>
+    <% result.forEach(elements =>{%>
+        <section>
+            <h3>Type: <%= elements.type %></h3>
+            <p>Text: <%= elements.text %></p>
+            <br>
+        </section>
+        <form action="/facts" method="POST">
+        <input type="hidden" name="type" id="" value="<%= elements.text %>">
+        <input type="hidden" name="text" id="" value="<%= elements.text %>">
+        <button type="submit">Add to fav Facts</button>
+    </form>
+    <%})%>
+</body>
+</html> -->
